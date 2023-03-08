@@ -1,0 +1,13 @@
+{
+    "type":"mongodb",
+    "host":"localhost",
+    "database":"easynote",
+    "syncronize":true,
+    "logging":true,
+    "entities":[
+        "src/db/entity/**/*.ts"
+    ],
+    "cli":{
+        "entitiesDir":"src/db/entity"
+    }
+}

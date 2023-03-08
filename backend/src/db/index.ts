@@ -1,0 +1,1 @@
+export { initMongoDB } from './conn';
