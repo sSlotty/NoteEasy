@@ -91,30 +91,6 @@ export const AuthCustomerController = (conn: Connection): Array<ServerRoute> => 
                 },
             }
         },
-        {
-            method: 'GET',
-            path: '/customer',
-            async handler(r: Request, h: ResponseToolkit, err?: Error) {
-                
-                const page: any = Number(r.params.page)
-                const limit: any = Number(r.params.limit)
-                const customers = await customerRepo.find({
-                    take: limit,
-                    skip: page * limit,
-                })
-                customers.forEach((cus) => {
-                    delete cus.password
-                    delete cus.salt
-                    delete cus?._id
-                })
-                return h.response({ data: customers }).code(200)
-            },
-            options: {
-                auth: {
-                    strategy: 'jwt',
-                },
-            }
-        }
 
 
     ]

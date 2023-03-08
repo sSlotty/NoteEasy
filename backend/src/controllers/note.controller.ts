@@ -113,7 +113,6 @@ export const NoteController = (conn: Connection): Array<ServerRoute> => {
             path: '/note',
             async handler({ query }: Request, h: ResponseToolkit, err?: Error) {
 
-                console.log(query)
 
                 if (err) {
                     return h.response({ message: err.message }).code(400);
